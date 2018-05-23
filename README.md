@@ -11,10 +11,10 @@ A minimal [Prezto](https://github.com/sorin-ionescu/prezto) Zsh prompt theme ins
 - Add `prompt goboii` to your `~/.zpreztorc`.
 
 The theme's colors can be configured by changing the line in `~/.zpreztorc` to something like:
-- prompt goboii white blue
+- `prompt goboii white blue`
 
 The syntax is:
-- prompt goboii [<prompt color> [<path color>]]
+- `prompt goboii [<prompt color> [<path color>]]`
 
 ### License
 
