@@ -1,0 +1,28 @@
+prompt_goboii_help () {
+  cat <<'EOF'
+This prompt is color-scheme-able.  You can invoke it thus:
+
+  prompt goboii [<prompt color> [<path color>]]
+
+Written by Ahmad Draidi <ar2000jp@gmail.com> based on walters prompt,
+which was stolen from Colin Walters <walters@debian.org>,
+who gives credit to Michel Daenzer <daenzer@debian.org>.
+EOF
+}
+
+prompt_goboii_setup () {
+
+# Show ... when editor is completing
+zstyle ':prezto:module:editor:info:completing' format '%B%F{red}...%f%b'
+
+if [[ "$TERM" != "dumb" ]]; then
+    PROMPT='%B%(?..[%?] )'"%F{${1:-cyan}}"'%b%n%B@%b%U%m%u %B]%b%f ${editor_info[keymap]}'
+    RPROMPT="%F{${2:-magenta}}%~%f"
+else
+    PROMPT="%(?..[%?] )%n@%m:%~] "
+fi
+
+  prompt_opts=(cr percent subst)
+}
+
+prompt_goboii_setup "$@"
